@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>coin game</title>
+    <style>
+      button {
+        border-color: rgb(123, 44, 197);
+        border-style: solid;
+        border-width: 2px;
+        background-color: rgb(226, 226, 179);
+        color: black;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        padding: 15px 18px;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+      p {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 40px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Head or Tail Game</p>
+    <button
+      onclick="
+            let random=Math.random();
+            let computerMove='';
+            if(random>=0 && random<=1/2)
+                computerMove='head';
+            else
+                computerMove='tail';
+            let result='';
+            if(computerMove==='head')
+                result='You win';
+            else
+                result='You lose';
+            alert(`your choice:Head. Output:${computerMove}.${result}`);
+        "
+    >
+      Head
+    </button>
+    <button
+      onclick="
+            random=Math.random();
+            computerMove='';
+            if(random>=0 && random<=1/2)
+                computerMove='head';
+            else
+                computerMove='tail';
+            result='';
+            if(computerMove==='head')
+                result='You lose';
+            else
+                result='You win';
+            alert(`your choice:Tail. Output:${computerMove}.${result}`);
+        "
+    >
+      Tail
+    </button>
+  </body>
+</html>
