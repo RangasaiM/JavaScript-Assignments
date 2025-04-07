@@ -30,8 +30,10 @@
       score.wins=0;
       score.losses=0;
       score.ties=0;
-      localStorage.removeItem('score');
+      localStorage.removeItem('score');   
       updateScore();
+      document.querySelector('.move').innerHTML='';
+      document.querySelector('.js-result').innerHTML='';
     "
     >
       Reset score
