@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Set Timeout Function</title>
+    <style>
+      .js-button {
+        padding: 10px 20px;
+        background-color: aquamarine;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="js-button"
+      onclick="
+        const currentText=this.innerHTML;
+        this.innerHTML='Loading...'
+        setTimeout(function(){
+            changing(currentText);
+        },1000);
+        "
+    >
+      Start
+    </button>
+    <script>
+      function changing(currentText) {
+        const buttonElement = document.querySelector(".js-button");
+        if (currentText === "Start") {
+          buttonElement.innerHTML = "Finished";
+        } else {
+          buttonElement.innerHTML = "Start";
+        }
+      }
+    </script>
+  </body>
+</html>

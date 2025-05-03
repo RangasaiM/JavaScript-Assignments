@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>coin game</title>
+    <style>
+      button {
+        border-color: blueviolet;
+        border-width: 2px;
+        border-style: solid;
+        background-color: beige;
+        color: black;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        padding: 15px 18px;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+      p {
+        font-size: 40px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Head or Tail Game</p>
+    <button onclick="playGame('head'); ">Head</button>
+    <button onclick="playGame('tail')">Tail</button>
+    <button
+      onclick=";
+      score.wins=0;
+      score.losses=0;
+      localStorage.removeItem('score')
+    "
+    >
+      Refresh
+    </button>
+    <script>
+      const score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+      };
+      function playGame(guess) {
+        const computerMove = pickComputerMove();
+        let result = "";
+        if (guess === "head") {
+          if (computerMove === "head") result = "You win";
+          else result = "You lose";
+        } else {
+          if (computerMove === "head") result = "You lose";
+          else result = "You win";
+        }
+        if (result == "You win") score.wins++;
+        else score.losses++;
+        localStorage.setItem("score", JSON.stringify(score));
+        alert(`your choice:${guess}. Output:${computerMove}.${result}
+wins:${score.wins} losses:${score.losses}`);
+      }
+      function pickComputerMove() {
+        let random = Math.random();
+        if (random >= 1 / 2) computerMove = "head";
+        else computerMove = "tail";
+        return computerMove;
+      }
+    </script>
+  </body>
+</html>

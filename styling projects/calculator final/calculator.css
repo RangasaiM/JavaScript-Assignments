@@ -1,0 +1,23 @@
+button {
+    border: none;
+    background-color: rgb(58, 56, 56);
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  body {
+    padding-top: 100px;
+    padding-left: 200px;
+    background-color: black;
+  }
+  .result {
+    font-size: 40px;
+    color: white;
+  }
+  .actions {
+    background-color: orange;
+  }

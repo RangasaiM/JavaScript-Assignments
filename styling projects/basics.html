@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Styling projects</title>
+  </head>
+  <style>
+    .first,
+    .second,
+    .third {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      cursor: pointer;
+    }
+    .is-toggled {
+      background-color: gray;
+      color: black;
+      border: none;
+      padding: 12px 15px;
+    }
+  </style>
+  <body>
+    <button class="first" onclick="answer();">Gaming</button>
+    <button class="second" onclick="answer1();">Music</button>
+    <button class="third" onclick="answer2();">Tech</button>
+    <script>
+      const techElement = document.querySelector(".third");
+      const musicElement = document.querySelector(".second");
+      const gamingElement = document.querySelector(".first");
+      function answer() {
+        if (gamingElement.classList.contains("is-toggled")) {
+          gamingElement.classList.remove("is-toggled");
+        } else {
+          gamingElement.classList.add("is-toggled");
+          musicElement.classList.remove("is-toggled");
+          techElement.classList.remove("is-toggled");
+        }
+      }
+      function answer1() {
+        if (musicElement.classList.contains("is-toggled")) {
+          musicElement.classList.remove("is-toggled");
+        } else {
+          musicElement.classList.add("is-toggled");
+          gamingElement.classList.remove("is-toggled");
+          techElement.classList.remove("is-toggled");
+        }
+      }
+      function answer2() {
+        if (techElement.classList.contains("is-toggled")) {
+          techElement.classList.remove("is-toggled");
+        } else {
+          techElement.classList.add("is-toggled");
+          musicElement.classList.remove("is-toggled");
+          gamingElement.classList.remove("is-toggled");
+        }
+      }
+    </script>
+  </body>
+</html>

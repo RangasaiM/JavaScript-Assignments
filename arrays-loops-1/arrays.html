@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>arrays</title>
+  </head>
+  <body>
+    <p>open console</p>
+    <script>
+      const array = [10, 20, 30];
+      console.log(array);
+      array[2] = 99;
+      console.log(array);
+      lastindex(array);
+      const value = ["hi", "hello", "good"];
+      lastindex(value);
+      function lastindex(arr) {
+        console.log(arr[arr.length - 1]);
+      }
+      swap(array);
+      swap(value);
+      function swap(arr) {
+        let temp = arr[0];
+        arr[0] = arr[arr.length - 1];
+        arr[arr.length - 1] = temp;
+        console.log(arr);
+      }
+    </script>
+  </body>
+</html>

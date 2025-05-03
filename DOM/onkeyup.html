@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onkeyup example</title>
+  </head>
+  <body>
+    <input
+      class="js-input"
+      type="text"
+      placeholder="Name"
+      onkeyup="display();"
+    />
+    <p class="result"></p>
+    <script>
+      function display() {
+        const text = document.querySelector(".js-input");
+        let ans = text.value;
+        document.querySelector(".result").innerHTML = ans;
+      }
+    </script>
+  </body>
+</html>

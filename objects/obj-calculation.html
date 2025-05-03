@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      button {
+        border: none;
+        background-color: rgb(119, 119, 160);
+        padding: 15px 18px 15px 18px;
+        border-radius: 3px;
+        margin-right: 10px;
+        font-size: 20px;
+        color: white;
+      }
+      body {
+        padding-top: 200px;
+        padding-left: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <button onclick="calculation('1')">1</button>
+      <button onclick="calculation('2')">2</button>
+      <button onclick="calculation('3')">3</button>
+    </p>
+    <p>
+      <button onclick="calculation('4')">4</button>
+      <button onclick="calculation('5')">5</button>
+      <button onclick="calculation('6')">6</button>
+    </p>
+    <p>
+      <button onclick="calculation('7')">7</button>
+      <button onclick="calculation('8')">8</button>
+      <button onclick="calculation('9')">9</button>
+    </p>
+    <p>
+      <button onclick="calculation('+')">+</button>
+      <button onclick="calculation('-')">-</button>
+      <button onclick="calculator=eval(calculator);console.log(calculator)">
+        =
+      </button>
+      <button
+        onclick="localStorage.removeItem('calculator');
+        calculator='';console.log('calculator=0');
+      "
+      >
+        refersh
+      </button>
+    </p>
+    <script>
+      let calculator = JSON.parse(localStorage.getItem("calculator")) || "";
+      function calculation(value) {
+        calculator += value;
+        localStorage.setItem("calculator", JSON.stringify(calculator));
+        console.log(calculator);
+      }
+    </script>
+  </body>
+</html>

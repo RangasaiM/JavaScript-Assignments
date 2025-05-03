@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button class="first">9a</button>
+    <button class="second">9b</button>
+    </body><br><br>
+    <button class="head"
+    onclick="flipCoin('heads');">heads</button>
+    <button class="tail"
+    onclick="flipCoin('tails');">tails</button>
+    <p class="result"></p>
+    <script>
+      // exercise 9A
+      console.log(document.querySelector(".first"));
+      // exercise 9B
+      document.querySelector(".second").innerHTML = "9b done";
+      // exercise 9C
+      function flipCoin(move)
+      {
+      if(move==='heads')
+      {
+        document.querySelector('.result').innerHTML='YOU CHOOSE HEADS';
+      }
+       else
+       {
+        document.querySelector('.result').innerHTML='YOU CHOOSE TAILS';
+       }
+    }
+
+    </script>
+  </body>
+</html>
